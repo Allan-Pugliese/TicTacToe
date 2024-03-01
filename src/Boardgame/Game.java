@@ -7,7 +7,7 @@ public class Game {
 	Scanner teclado = new Scanner(System.in);
 
 	private char[][] board;
-	protected char player;
+	private char player;
 
 	public Game() {
 		board = new char[3][3];
