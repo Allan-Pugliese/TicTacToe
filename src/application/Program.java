@@ -13,10 +13,13 @@ public class Program {
 
 		Scanner teclado = new Scanner(System.in);
 		char option = ' ';
+		int contEmpate = 0;
+		int victoryX = 0;
+		int victoryO = 0;
 
 		do {
-			boolean gameEnded;
 			Game game = new Game();
+
 			do {
 				game.showBoard();
 				System.out.println("É a vez do Jogador " + game.getPlayer());
@@ -29,7 +32,12 @@ public class Program {
 						game.showBoard();
 
 						System.out.println("Jogador " + game.getPlayer() + " venceu!");
-						gameEnded = true;
+						if (game.getPlayer() == 'x') {
+							victoryX++;
+
+						} else if (game.getPlayer() == 'o') {
+							victoryO++;
+						}
 						break;
 
 					} else if (game.fullBoard()) {
@@ -37,6 +45,7 @@ public class Program {
 
 						System.out.println("Empate");
 						game.showBoard();
+						contEmpate = contEmpate + 1;
 						break;
 
 					} else {
@@ -44,15 +53,29 @@ public class Program {
 					}
 				} else {
 					System.out.println("Jogada inválida! Tente novamente.");
+					game.showBoard();
 
 				}
 			} while (true);
 			System.out.println("Deseja jogar mais uma ? S/N ");
 			option = teclado.next().charAt(0);
+			teclado.nextLine();
 
 		} while (option != 'n' && option != 'N');
 
-		System.out.println("Até a proxima");
+		System.out.println("Vitórias do X: " + victoryX);
+		System.out.println("Vitórias do O: " + victoryO);
+
+		System.out.println("Numero de empates: " + contEmpate);
+
+		if (victoryX > victoryO) {
+			System.out.println("Parabéns ao jogador X");
+		} else if (victoryO > victoryX) {
+			System.out.println("Parabéns ao jogador O");
+		} else {
+
+			System.out.println("Até a proxima");
+		}
 	}
 
 }

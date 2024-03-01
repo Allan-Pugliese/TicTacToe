@@ -7,14 +7,13 @@ public class Game {
 	Scanner teclado = new Scanner(System.in);
 
 	private char[][] board;
-	private char player;
+	protected char player;
 
 	public Game() {
 		board = new char[3][3];
 		player = 'x';
 
 		StartBoard();
-
 	}
 
 	public char getPlayer() {
@@ -41,8 +40,6 @@ public class Game {
 			}
 			System.out.println();
 		}
-
-		System.out.println();
 	}
 
 	public boolean MakeMove(int line, int column) {
@@ -92,8 +89,8 @@ public class Game {
 		return false;
 	}
 
-	public void replacePlayer () {
-		
+	public void replacePlayer() {
+
 		player = (player == 'x') ? 'o' : 'x';
 	}
 
