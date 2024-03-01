@@ -52,10 +52,8 @@ public class Game {
 				System.out.println("Digite a linha e coluna que deseja jogar (1 a 3): ");
 				line = teclado.nextInt() - 1;
 				column = teclado.nextInt() - 1;
-
 			}
 		}
-
 	}
 
 	public boolean fullBoard() {

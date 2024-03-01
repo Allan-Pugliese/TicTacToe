@@ -17,6 +17,9 @@ public class Program {
 		int victoryX = 0;
 		int victoryO = 0;
 
+		System.out.println("--- BEM VINDO AO JOGO DA VELHA ---");
+		System.out.println();
+
 		do {
 			Game game = new Game();
 
@@ -57,17 +60,20 @@ public class Program {
 
 				}
 			} while (true);
-			System.out.println("Deseja jogar mais uma ? S/N ");
+			System.out.println("Deseja jogar mais uma partida ? S/N ");
 			option = teclado.next().charAt(0);
 			teclado.nextLine();
 
 		} while (option != 'n' && option != 'N');
 
 		System.out.println("Vitórias do X: " + victoryX);
+		System.out.println();
 		System.out.println("Vitórias do O: " + victoryO);
+		System.out.println();
 
 		System.out.println("Numero de empates: " + contEmpate);
 
+		System.out.println();
 		if (victoryX > victoryO) {
 			System.out.println("Parabéns ao jogador X");
 		} else if (victoryO > victoryX) {
